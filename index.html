@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <style>
+        :root {
+            --previous-x: -100%;
+            --active-x: 0%;
+            --next-x: 100%;
+        }
+
+        .gallery {
+            position: relative;
+            width: 720;
+            height: 480;
+            overflow: hidden;
+        }
+
+        .gallery * {
+            position: absolute;
+        }
+
+        .gallery img {
+            width: 720;
+            height: 480;
+            transition: transform 0.5s;
+            will-change: auto;
+        }
+
+        .gallery .control {
+            top: 50%;
+            background-color: lime;
+            color: white;
+            z-index: 4;
+            cursor: pointer;
+        }
+
+        .gallery .control.previous {
+            left: 5%;
+        }
+
+        .gallery .control.next {
+            right: 5%;
+        }
+
+        img.previous,
+        .o-viewer.previous {
+            transform: translateX(var(--previous-x)) translateY(-50%);
+        }
+
+        img.active,
+        .o-viewer.active {
+            z-index: 4;
+            transform: translateX(var(--active-x)) translateY(-50%);
+        }
+
+        img.next,
+        .o-viewer.next {
+            transform: translateX(var(--next-x)) translateY(-50%);
+        }
+
+        .gallery img,
+        .gallery .o-viewer {
+            position: absolute;
+            transition: transform 0.5s;
+            will-change: auto;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery">
+        <img src="https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778010-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true">
+        <div class="previous control">left</div>
+        <div class="next control">right</div>
+    </div>
+</body>
+<script src="./gallery.js"></script>
+<script>
+    var gallery = new Gallery(document.querySelector(".gallery"), [{
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778010-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": null
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778007-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778008-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778009-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778011-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778012-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778013-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://nhs-dynamic.secure.footprint.net/Images/Homes/PerryH68//16778014-180915.jpg?maxwidth=730&maxheight=416&encoder=freeimage&progressive=true",
+        "alt": "Teravista 62',78626"
+    }, {
+        "url": "https://httpsak-a.akamaihd.net/689254969001/689254969001_5686444587001_5686443035001-th.jpg?pubId=689254969001&videoId=5686443035001",
+        "alt": "Teravista 62\\'"
+    }]);
+</script>
+
+</html>
